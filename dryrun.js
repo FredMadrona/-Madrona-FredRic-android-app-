@@ -88,25 +88,41 @@
 // console.log(profile);
 
 
-const ssn = Symbol(`ssn`);
+// const ssn = Symbol(`ssn`);
 
-const person = {
+// const person = {
+//   firstName: 'John',
+//     lastName: 'Doe',
+//    age: 25,
+// [ssn]: `123-3242345`
+//   };
+
+  // const person2 = {
+  //   firstName: 'John',
+  //     lastName: 'Madrona',
+  //    age: 26,
+  // [ssn]: `123-3242345`
+  //   };
+
+//   const kv = Object.entries(person)
+// console.table(kv);
+
+// const ibangPerson = Object.assign({}, person,person2);
+
+// console.log(ibangPerson)
+
+//trying object destructuring
+let person = {
   firstName: 'John',
-    lastName: 'Doe',
-   age: 25,
-[ssn]: `123-3242345`
-  };
+  lastName: 'Doe',
+  currentAge: 28
+};
 
-  const person2 = {
-    firstName: 'John',
-      lastName: 'Madrona',
-     age: 26,
-  [ssn]: `123-3242345`
-    };
+let { firstName, lastName, middleName = 'pangit', currentAge: age = 18 } = person;
 
-  const kv = Object.entries(person)
-console.table(kv);
 
-const ibangPerson = Object.assign({}, person,person2);
+const getFullname = (fName, lName) => console.log(fName+" "+ lName);
 
-console.log(ibangPerson)
+getFullname(firstName,lastName);
+// console.log(middleName); // ''
+// console.log(age); // 28
