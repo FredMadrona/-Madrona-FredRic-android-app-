@@ -112,17 +112,86 @@
 // console.log(ibangPerson)
 
 //trying object destructuring
-let person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  currentAge: 28
-};
+// let person = {
+//   firstName: 'John',
+//   lastName: 'Doe',
+//   currentAge: 28
+// };
 
-let { firstName, lastName, middleName = 'pangit', currentAge: age = 18 } = person;
+// let { firstName, lastName, middleName = 'pangit', currentAge: age = 18 } = person;
 
 
-const getFullname = (fName, lName) => console.log(fName+" "+ lName);
+// const getFullname = (fName, lName) => console.log(fName+" "+ lName);
 
-getFullname(firstName,lastName);
+// getFullname(firstName,lastName);
+
 // console.log(middleName); // ''
 // console.log(age); // 28
+
+/**
+ * Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+
+Return the running sum of nums.
+ */
+
+/***
+ * Practicing JavaScript Optional Chaining
+ */
+
+// function getUser(id) {
+
+//   if(id <= 0) {
+//       return null;
+//   }
+
+//   // get the user from database
+//   // and return null if id does not exist
+//   // ...
+  
+//   // if user was found, return the user
+//   return {
+//       id: id,
+//       username: 'admin',
+//       profile: {
+//           avatar: '/avatar.png',
+//           language: 'English',
+//           talent: 'singing'
+
+//       }
+//   }
+// }
+
+// let user = getUser(-1);
+// let avatar = user ?. profile ?. avatar;
+
+// console.log(profile);
+
+// let file = {
+//   read() {
+//       return 'file content';
+//   },
+//   write(content) {
+//       console.log(`Writing ${content} to file...`);
+//       return true;
+//   }
+// };
+
+// let compressedData = file.compress?.();
+
+// console.log(compressedData);
+// function createMachine(name, status) {
+//   return {
+//       name,
+//       status
+//   };
+// }
+
+// const sample = createMachine('printer');
+let name = 'machine name';
+let machine = {
+    [name]: 'server',
+    'machine hours': 10000
+};
+
+console.log(machine[name]); // server
+console.log(machine['machine hours']); // 10000
