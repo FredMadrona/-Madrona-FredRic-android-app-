@@ -187,11 +187,53 @@ Return the running sum of nums.
 // }
 
 // const sample = createMachine('printer');
-let name = 'machine name';
-let machine = {
-    [name]: 'server',
-    'machine hours': 10000
-};
+// let name = 'machine name';
+// let machine = {
+//     [name]: 'server',
+//     'machine hours': 10000
+// };
 
-console.log(machine[name]); // server
-console.log(machine['machine hours']); // 10000
+// console.log(machine[name]); // server
+// console.log(machine['machine hours']); // 10000
+
+
+/**
+ * Learned about Classes, Getters, and Setters 
+ */
+// let meeting = {
+//   attendees: [],
+//   add(attendee) {
+//       console.log(`${attendee} joined the meeting.`);
+//       this.attendees.push(attendee);
+//       return this;
+//   },
+//   get latest() {
+//       let count = this.attendees.length;
+//       return count == 0 ? undefined : this.attendees[count - 1];
+//   }
+// };
+
+// meeting.add('Peter').add('Jane').add('John');
+// console.log(`The latest attendee is ${meeting.latest}.`);
+
+class Person {
+  constructor(name) {
+      this.setName(name);
+  }
+  getName() {
+      return this.name;
+  }
+  setName(newName) {
+      newName = newName.trim();
+      if (newName === '') {
+          throw 'The name cannot be empty';
+      }
+      this.name = newName;
+  }
+}
+
+let person = new Person('Jane Doe');
+console.log(person); // Jane Doe
+
+person.setName('Jane Smith');
+console.log(person.getName()); // Jane Smith
