@@ -216,24 +216,79 @@ Return the running sum of nums.
 // meeting.add('Peter').add('Jane').add('John');
 // console.log(`The latest attendee is ${meeting.latest}.`);
 
-class Person {
-  constructor(name) {
-      this.setName(name);
+// class Person {
+//   constructor(name) {
+//       this.setName(name);
+//   }
+//   getName() {
+//       return this.name;
+//   }
+//   setName(newName) {
+//       newName = newName.trim();
+//       if (newName === '') {
+//           throw 'The name cannot be empty';
+//       }
+//       this.name = newName;
+//   }
+// }
+
+// let person = new Person('Jane Doe');
+// console.log(person); // Jane Doe
+
+// person.setName('Jane Smith');
+// console.log(person.getName()); // Jane Smith
+
+
+// let app = new class {
+//   constructor(name) {
+//       this.name = name;
+//   }
+//   start() {
+//       console.log(`Starting the ${this.name}...`);
+//   }
+// }('Awesome App');
+
+// app.start(); // Starting the Awesome App...
+
+
+// let name = 'fullName';
+
+// class Person {
+//   constructor(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+//   get [name]() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
+
+// let person = new Person('John', 'Doe');
+// console.log(person.fullName);
+
+
+
+//trying inheriting using extends and super
+class Animal {
+  constructor(legs) {
+      this.legs = legs;
   }
-  getName() {
-      return this.name;
-  }
-  setName(newName) {
-      newName = newName.trim();
-      if (newName === '') {
-          throw 'The name cannot be empty';
-      }
-      this.name = newName;
+  walk() {
+      console.log('walking on ' + this.legs + ' legs');
   }
 }
 
-let person = new Person('Jane Doe');
-console.log(person); // Jane Doe
+class Bird extends Animal {
+  constructor(legs) {
+      super(legs);
+    
+  }
+  fly() {
+      console.log('flying '+this.legs);
+  }
+}
 
-person.setName('Jane Smith');
-console.log(person.getName()); // Jane Smith
+
+let bird = new Bird(2);
+
+bird.fly();
